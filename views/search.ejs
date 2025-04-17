@@ -1,0 +1,19 @@
+<div class="author">
+    <h1 class="author__heading">Search Results</h1>
+</div>
+
+<section class="articles">
+    <% if (data.length === 0) { %>
+        <p>No results found for your search.</p>
+    <% } else { %>
+        <ul class="article-ul">
+            <% data.forEach(post => { %>
+                <li>
+                    <a href="/post/<%= post._id %>" aria-label="Read more about <%= post.title %>">
+                        <span><%= post.createdAt.toDateString() %></span>
+                    </a>
+                </li>
+            <% }) %>
+        </ul>
+    <% } %>
+</section>
